@@ -1,6 +1,6 @@
 name: platform_widget
 description: Flutter Platform Widgets
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/vodino/platform_widgets.git
 
 environment:
