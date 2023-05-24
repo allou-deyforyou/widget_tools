@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-abstract class DefaultAppBar extends StatelessWidget implements ObstructingPreferredSizeWidget {
-  const DefaultAppBar({Key? key}) : super(key: key);
+abstract class CustomAppBar extends StatelessWidget
+    implements ObstructingPreferredSizeWidget {
+  const CustomAppBar({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(45.0);
