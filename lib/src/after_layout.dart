@@ -3,11 +3,11 @@ import 'package:flutter/widgets.dart';
 class AfterLayout extends StatefulWidget {
   const AfterLayout({
     super.key,
-    required this.listener,
+    required this.afterLayout,
     required this.child,
   });
 
-  final void Function(BuildContext context) listener;
+  final void Function(BuildContext context) afterLayout;
   final Widget child;
 
   @override
@@ -19,7 +19,7 @@ class _AfterLayoutState extends State<AfterLayout> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.endOfFrame.whenComplete(() {
-      if (mounted) widget.listener.call(context);
+      if (mounted) widget.afterLayout.call(context);
     });
   }
 

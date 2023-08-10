@@ -63,7 +63,8 @@ class _CounterBuilderState extends State<CounterBuilder> {
   @override
   void didUpdateWidget(covariant CounterBuilder oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.duration != widget.duration || oldWidget.timeout != widget.timeout) {
+    if (oldWidget.duration != widget.duration ||
+        oldWidget.timeout != widget.timeout) {
       _restartTimer();
     }
   }
