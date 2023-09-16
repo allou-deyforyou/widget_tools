@@ -28,30 +28,39 @@ class _CounterBuilderState extends State<CounterBuilder> {
   Timer? _timer;
 
   void _restartTimer() {
+    if (widget.reverse) {
+      _createReverseTimer();
+    } else {
+      _createTimer();
+    }
+  }
+
+  void _createTimer() {
     _timer?.cancel();
-    _timeout = widget.reverse ? widget.timeout : Duration.zero;
-    _timer = Timer.periodic(
-      widget.duration,
-      (timer) {
-        if (widget.reverse) {
-          if (_timeout <= Duration.zero) {
-            timer.cancel();
-          } else {
-            setState(() {
-              _timeout -= widget.duration;
-            });
-          }
-        } else {
-          if (_timeout >= widget.timeout) {
-            timer.cancel();
-          } else {
-            setState(() {
-              _timeout += widget.duration;
-            });
-          }
-        }
-      },
-    );
+    _timeout = Duration.zero;
+    _timer = Timer.periodic(widget.duration, (timer) {
+      if (_timeout >= widget.timeout) {
+        timer.cancel();
+      } else {
+        setState(() {
+          _timeout += widget.duration;
+        });
+      }
+    });
+  }
+
+  void _createReverseTimer() {
+    _timer?.cancel();
+    _timeout = widget.timeout;
+    _timer = Timer.periodic(widget.duration, (timer) {
+      if (_timeout <= Duration.zero) {
+        timer.cancel();
+      } else {
+        setState(() {
+          _timeout -= widget.duration;
+        });
+      }
+    });
   }
 
   @override

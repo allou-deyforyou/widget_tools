@@ -1,6 +1,6 @@
 name: widget_tools
 description: A set of useful widget tools that are missing from the flutter framework
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/allou-deyforyou/widget_tools
 
 environment:

@@ -19,7 +19,7 @@ class _AfterLayoutState extends State<AfterLayout> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.endOfFrame.whenComplete(() {
-      if (mounted) widget.afterLayout.call(context);
+      widget.afterLayout.call(context);
     });
   }
 

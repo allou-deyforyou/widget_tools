@@ -5,7 +5,7 @@ abstract class CustomAppBar extends StatelessWidget
   const CustomAppBar({super.key});
 
   @override
-  Size get preferredSize => const Size.fromHeight(45.0);
+  Size get preferredSize => const Size.fromHeight(54.0);
 
   @override
   Widget build(BuildContext context);

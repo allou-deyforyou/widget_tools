@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Edit AfterLayout, CounterBuilder and CustomAppBar.
+
 ## 0.0.4
 
 * Edit AfterLayout
